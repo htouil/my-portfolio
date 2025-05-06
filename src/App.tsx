@@ -1,24 +1,18 @@
-// import { useState } from 'react';
+import NavBar from './components/NavBar';
+import Profil from './components/Profil';
 import './App.css';
 
 function App() {
   return (
     <>
-      <div className="flex">
-        <img
-          src="/hatim_picture.jpg"
-          alt="profil_picture"
-          className="w-96"
-        ></img>
-        <div className="self-center grow text-white">
-          <h1 className="text-center text-3xl ">My Portfolio</h1>
-        </div>
-      </div>
+      <NavBar />
+      <Profil />
     </>
   );
 }
 
 export default App;
+
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
 // const [count, setCount] = useState(0);

@@ -1,6 +1,6 @@
 body {
-  /* background: url('../public/binary_bg.gif'); */
-  background-color: black;
+  background: url('/binary_bg.gif');
+  /* background-color: black; */
 }
 
 /* :root {
