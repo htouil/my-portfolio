@@ -7,7 +7,7 @@ const NavBar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white px-4 py-3 shadow-md dark:bg-gray-900">
+    <nav className="bg-slate-950 px-4 py-3 shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="text-xl font-bold text-gray-800 dark:text-white">
           MyPortfolio
