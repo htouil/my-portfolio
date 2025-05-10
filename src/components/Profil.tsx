@@ -2,14 +2,14 @@
 
 const Profil = () => {
   return (
-    <div className="flex bg-slate-950/40 py-5">
+    <div className="m-4 flex rounded-xl bg-slate-950/60 p-5">
       <img
         src="/hatim_picture.jpg"
         alt="profil_picture"
-        className="ml-7 w-64 place-self-center-safe rounded-xl p-2"
+        className="w-64 place-self-center-safe rounded-2xl p-2"
       ></img>
       <div className="flex grow flex-col place-content-center-safe gap-10 text-white">
-        <p className="mr-20 self-center text-center text-xl/normal font-bold tracking-wide">
+        <p className="mr-20 self-center text-center text-xl/normal font-bold tracking-wide text-zinc-500">
           Hello dear visitor,
           <span className="ml-20 inline-block" />
           <br />I am Hatim TOUIL
@@ -38,8 +38,15 @@ const Profil = () => {
             </div>
           </div>
           <div className="basis-5/6 bg-[#dabb64]">
-            <p className="p-2 indent-8 text-base text-pretty text-black">
-              Hello and Welcome, My name is Hatim TOUIL
+            <p className="p-2 indent-8 text-sm text-pretty text-black">
+              Hello and Welcome, My name is Hatim TOUIL, a front-end developer
+              with a strong foundation in system programming, algorithms, and
+              collaborative coding, honed through the rigorous Common Core at
+              1337 Coding School.
+              <br />
+              I'm passionate about crafting, not only responsive and
+              user-friendly, but also creative interfaces. My goal is to
+              contribute to innovative projects that make a meaningful impact.
             </p>
           </div>
         </div>

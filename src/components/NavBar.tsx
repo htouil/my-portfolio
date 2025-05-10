@@ -22,11 +22,6 @@ const NavBar = () => {
         </div>
         <ul className="hidden space-x-6 font-medium text-gray-800 md:flex dark:text-white">
           <li>
-            <a href="#home" className="hover:text-blue-500">
-              Home
-            </a>
-          </li>
-          <li>
             <a href="#about" className="hover:text-blue-500">
               About
             </a>

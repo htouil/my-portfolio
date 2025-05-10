@@ -1,12 +1,15 @@
 import NavBar from './components/NavBar';
 import Profil from './components/Profil';
+import CoolSeparator from './components/CoolSeparator';
 import './App.css';
 
 function App() {
   return (
     <>
+      {/* add links as logos in the navbar and make the projects bubles slide to show description*/}
       <NavBar />
       <Profil />
+      <CoolSeparator />
     </>
   );
 }
