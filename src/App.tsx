@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar';
 import Profil from './components/Profil';
+import Projects from './components/Projects';
 import CoolSeparator from './components/CoolSeparator';
 import './App.css';
 
@@ -10,6 +11,7 @@ function App() {
       <NavBar />
       <Profil />
       <CoolSeparator />
+      <Projects />
     </>
   );
 }
