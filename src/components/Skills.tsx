@@ -1,26 +1,73 @@
-interface MarqueeProps {
-  images: string[];
+import './Skills.css';
+
+interface Skill {
+  src: string;
+  name: string;
 }
 
-const Marquee = ({ images }: MarqueeProps) => {
+const skills: Skill[] = [
+  { src: '/git_logo.png', name: 'Git' },
+  { src: '/bash_logo.png', name: 'Bash' },
+  { src: '/c_logo.png', name: 'C' },
+  { src: '/c++_logo.png', name: 'C++' },
+  { src: '/docker_logo.png', name: 'Docker' },
+  { src: '/html_logo.png', name: 'HTML' },
+  { src: '/css_logo.png', name: 'CSS' },
+  { src: '/tailwind_logo.png', name: 'Tailwind CSS' },
+  { src: '/typescript_logo.png', name: 'TypeScript' },
+  { src: '/react_logo.png', name: 'ReactJS' },
+];
+
+const addPadding = (src: string): string => {
+  switch (src) {
+    case '/bash_logo.png':
+      return 'p-1';
+    case '/docker_logo.png':
+      return 'p-1';
+    case '/css_logo.png':
+      return 'p-3';
+    case '/tailwind_logo.png':
+      return 'p-4';
+    case '/typescript_logo.png':
+      return 'p-2';
+    case '/react_logo.png':
+      return 'p-1';
+    default:
+      return 'p-0';
+  }
+};
+
+const Marquee = () => {
+  const duplicatedSkills = [
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+    ...skills,
+  ];
   return (
-    <div className="overflow-hidden whitespace-nowrap">
-      <div className="animate-\(--marquee\) inline-block">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Logo ${index + 1}`}
-            className="mx-4 inline-block h-20 w-auto"
-          />
-        ))}
-        {images.map((src, index) => (
-          <img
-            key={`dup-${index}`}
-            src={src}
-            alt={`Logo ${index + 1}`}
-            className="mx-4 inline-block h-20 w-auto"
-          />
+    <div className="overflow-hidden rounded-4xl border-t border-b border-sky-600 shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1),_0_-10px_15px_-3px_rgb(0_0_0_/0.1)] shadow-sky-500/50 py-5">
+      <div className="marquee flex gap-10">
+        {duplicatedSkills.map((skill, index) => (
+          <div
+            key={`skill-${index}`}
+            className="flex min-w-32 flex-col items-center justify-center gap-3"
+          >
+            <div className="flex size-24 items-center-safe justify-center-safe rounded-full bg-[linear-gradient(to_right,#9ca3af_0%,#9ca3af_50%,#d1d5db_50%,#d1d5db_100%)]">
+              <img
+                src={skill.src}
+                alt={`Logo ${index + 1}`}
+                className={`size-20 ${addPadding(skill.src)}`}
+              />
+            </div>
+            <p className="bg-gradient-to-r from-sky-900 via-sky-600 to-sky-400 bg-clip-text text-xl font-semibold text-transparent">
+              {skill.name}
+            </p>
+          </div>
         ))}
       </div>
     </div>
@@ -28,35 +75,9 @@ const Marquee = ({ images }: MarqueeProps) => {
 };
 
 const Skills = () => {
-  const images = [
-    '/git_logo.png',
-    '/bash_logo.png',
-    '/c_logo.png',
-    '/c++_logo.png',
-    '/docker_logo.png',
-    '/html_logo.jpg',
-    '/css_logo.png',
-    '/tailwind_logo.png',
-    '/typescript_logo.png',
-    '/react_logo.png',
-  ];
   return (
     <div className="m-4 flex justify-center rounded-xl bg-slate-950/60 p-10">
-      {/* <div className="relative origin-center size-96 rounded-full border border-white">
-    	<div className="absolute top-0 left-1/2 -translate-1/2 size-20 rounded-full border border-white">
-
-    	</div>
-    	<div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 size-20 rounded-full border border-white">
-
-    	</div>
-    	<div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 size-20 rounded-full border border-white">
-
-    	</div>
-    	<div className="absolute top-1/2 left-0 -translate-1/2 size-20 rounded-full border border-white">
-
-    	</div>
-      </div> */}
-      <Marquee images={images} />
+      <Marquee />
     </div>
   );
 };
