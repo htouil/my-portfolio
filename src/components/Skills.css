@@ -10,3 +10,17 @@
 .marquee {
   animation: marquee 50s linear infinite;
 }
+
+/* .bg-gray-split {
+  background-image: linear-gradient(
+    to right,
+    #9ca3af 0%,
+    #9ca3af 50%,
+    #d1d5db 50%,
+    #d1d5db 100%
+  );
+}
+
+.shadow-y-only {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 -10px 15px -3px rgba(0, 0, 0, 0.1);
+} */

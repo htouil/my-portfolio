@@ -50,12 +50,12 @@ const Marquee = () => {
     ...skills,
   ];
   return (
-    <div className="overflow-hidden rounded-4xl border-t border-b border-sky-600 shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1),_0_-10px_15px_-3px_rgb(0_0_0_/0.1)] shadow-sky-500/50 py-5">
+    <div className="overflow-hidden rounded-4xl border-t border-b border-sky-600 py-10 shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1),_0_-10px_15px_-3px_rgb(0_0_0_/0.1)] shadow-sky-500/50">
       <div className="marquee flex gap-10">
         {duplicatedSkills.map((skill, index) => (
           <div
             key={`skill-${index}`}
-            className="flex min-w-32 flex-col items-center justify-center gap-3"
+            className="flex min-w-32 flex-col items-center justify-center gap-4"
           >
             <div className="flex size-24 items-center-safe justify-center-safe rounded-full bg-[linear-gradient(to_right,#9ca3af_0%,#9ca3af_50%,#d1d5db_50%,#d1d5db_100%)]">
               <img

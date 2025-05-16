@@ -9,7 +9,7 @@ const Profil = () => {
         className="w-64 place-self-center-safe rounded-2xl p-2"
       ></img>
       <div className="flex grow flex-col place-content-center-safe gap-10 text-white">
-        <p className="mr-20 self-center text-center text-2xl/relaxed font-extrabold tracking-wide bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-transparent">
+        <p className="mr-20 self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-center text-2xl/relaxed font-extrabold tracking-wide text-transparent">
           Hello dear visitor,
           <span className="ml-20 inline-block" />
           <br />I am Hatim TOUIL

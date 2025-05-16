@@ -1,11 +1,12 @@
 @import 'tailwindcss';
+@config "../tailwind.config.js";
 
-body {
+/* body {
   background: url('/binary_bg.gif');
-  /* background-color: black; */
+  background-color: black;
 }
 
-/* :root {
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
