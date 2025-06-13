@@ -76,7 +76,10 @@ const Marquee = () => {
 
 const Skills = () => {
   return (
-    <div className="m-4 flex justify-center rounded-xl bg-slate-950/60 p-10">
+    <div id='skills' className="m-4 flex flex-col justify-center gap-10 rounded-xl bg-slate-950/60 p-10">
+      <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-3xl/relaxed font-extrabold tracking-wide text-transparent">
+        Skills
+      </h1>
       <Marquee />
     </div>
   );

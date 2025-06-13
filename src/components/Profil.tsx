@@ -2,18 +2,18 @@
 
 const Profil = () => {
   return (
-    <div className="m-4 flex rounded-xl bg-slate-950/60 p-5">
+    <div id="about" className="m-4 mt-20 flex rounded-xl bg-slate-950/60 p-5">
       <img
         src="/hatim_picture.jpg"
         alt="profil_picture"
         className="w-64 place-self-center-safe rounded-2xl p-2"
       ></img>
       <div className="flex grow flex-col place-content-center-safe gap-10 text-white">
-        <p className="mr-20 self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-center text-2xl/relaxed font-extrabold tracking-wide text-transparent">
+        <h1 className="mr-20 self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-center text-2xl/relaxed font-extrabold tracking-wide text-transparent">
           Hello dear visitor,
           <span className="ml-20 inline-block" />
           <br />I am Hatim TOUIL
-        </p>
+        </h1>
         <div className="ml-10 flex h-72 w-80 flex-col self-center overflow-hidden rounded-3xl border border-[#aca8ac]">
           <div className="flex basis-1/6 rounded-t-xl bg-[#aca8ac]">
             <div className="flex basis-3/12 items-center-safe justify-evenly">

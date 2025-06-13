@@ -19,7 +19,7 @@ const ContactMe = () => {
     const respData = await response.json();
 
     if (respData.success) {
-      setResult('Form Submitted Successfully');
+      setResult('Form Sent Successfully');
       htmlForm.reset();
     } else {
       console.log('Error', respData);
@@ -28,47 +28,65 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="m-4 flex flex-col rounded-xl bg-slate-200/60 p-5">
-      <form onSubmit={contact} className="flex grow flex-col gap-3 p-5">
+    <div id='contact' className="m-4 gap-10 flex flex-col rounded-xl bg-slate-950/60 p-5">
+      <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-3xl/relaxed font-extrabold tracking-wide text-transparent">
+        Contact Me
+      </h1>
+      <form onSubmit={contact} className="flex grow flex-col gap-7 px-5">
         <div className="flex w-full gap-5">
-          <input
-            type="text"
-            name="first_name"
-            placeholder="Your First Name"
-            required
-            className="flex-1 rounded border border-gray-300 px-2 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          />
-          <input
-            type="text"
-            name="last_name"
-            placeholder="Your Last Name"
-            required
-            className="flex-1 rounded border border-gray-300 px-2 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          />
+          <label className="flex w-full flex-col gap-2">
+            <span className="text-slate-300">First Name</span>
+            <input
+              type="text"
+              name="first_name"
+              required
+              className="flex-1 rounded border-2 border-lime-400 px-2 py-1.5 text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] focus:ring-2 focus:ring-lime-400/70 focus:outline-none"
+            />
+          </label>
+          <label className="flex w-full flex-col gap-2">
+            <span className="text-slate-300">Last Name</span>
+            <input
+              type="text"
+              name="last_name"
+              required
+              className="flex-1 rounded border-2 border-lime-400 px-2 py-1.5 text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] focus:ring-2 focus:ring-lime-400/70 focus:outline-none"
+            />
+          </label>
         </div>
-        <input
-          type="text"
-          name="subject"
-          placeholder="Your Subject"
-          required
-          className="rounded border border-gray-300 px-2 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          className="rounded border border-gray-300 px-2 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          required
-          className="h-60 resize-none rounded border border-gray-300 px-2 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        ></textarea>
-        <button type="submit">Send</button>
+        <label className="flex flex-col gap-2">
+          <span className="text-slate-300">Email</span>
+          <input
+            type="email"
+            name="email"
+            required
+            className="rounded border-2 border-lime-400 px-2 py-1.5 text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] focus:ring-2 focus:ring-lime-400/70 focus:outline-none"
+          />
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="text-slate-300">Subject</span>
+          <input
+            type="text"
+            name="subject"
+            required
+            className="rounded border-2 border-lime-400 px-2 py-1.5 text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] focus:ring-2 focus:ring-lime-400/70 focus:outline-none"
+          />
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="text-slate-300">Message</span>
+          <textarea
+            name="message"
+            required
+            className="h-60 resize-none rounded border-2 border-lime-400 px-2 py-1.5 text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] focus:ring-2 focus:ring-lime-400/70 focus:outline-none"
+          ></textarea>
+        </label>
+        <button
+          className="rounded bg-lime-600 py-2 font-semibold text-slate-300 shadow-[0_0_8px_rgba(0,255,0,0.4),0_0_16px_rgba(0,255,0,0.2)] hover:bg-lime-700"
+          type="submit"
+        >
+          Send
+        </button>
       </form>
-      <span className='text-center'>{result}</span>
+      <span className="text-center text-lime-500">{result}</span>
     </div>
   );
 };
