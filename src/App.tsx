@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <>
-      {/* add links as logos in the navbar and make the projects bubles slide to show description*/}
+      {/* add links as logos in the navbar*/}
       <NavBar />
       <Profil />
       <CoolSeparator />
