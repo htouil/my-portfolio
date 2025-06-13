@@ -1,10 +1,10 @@
 const NavBar = () => {
   return (
-    <nav className="fixed bg-slate-950 px-4 py-3 top-0 right-0 left-0 z-10 shadow-md">
+    <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-end">
         {/* add linkedin and github icons here */}
         <div></div>
-        <ul className="space-x-6 font-medium text-slate-300 flex">
+        <ul className="flex space-x-6 font-medium text-slate-300">
           <li>
             <a href="#about" className="hover:text-slate-600">
               About Me

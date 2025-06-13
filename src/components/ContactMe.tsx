@@ -28,7 +28,10 @@ const ContactMe = () => {
   };
 
   return (
-    <div id='contact' className="m-4 gap-10 flex flex-col rounded-xl bg-slate-950/60 p-5">
+    <div
+      id="contact"
+      className="m-4 flex flex-col gap-10 rounded-xl bg-slate-950/60 p-5"
+    >
       <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-3xl/relaxed font-extrabold tracking-wide text-transparent">
         Contact Me
       </h1>
