@@ -2,7 +2,7 @@ import SingleProject from './SingleProject';
 
 const Projects = () => {
   return (
-    <div id='projects' className='py-14'>
+    <div id="projects" className="py-14">
       <div className="m-4 flex flex-col gap-10 rounded-xl bg-slate-950/60 p-5">
         <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-3xl/relaxed font-extrabold tracking-wide text-transparent">
           Projects

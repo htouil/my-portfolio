@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import ContactMe from './components/ContactMe';
 import CoolSeparator from './components/CoolSeparator';
 import './App.css';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Projects />
       <CoolSeparator />
       <ContactMe />
+      <Footer />
     </>
   );
 }
