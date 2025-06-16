@@ -28,13 +28,16 @@ const ContactMe = () => {
   };
 
   return (
-    <div id="contact" className="py-14">
-      <div className="m-4 flex flex-col gap-10 rounded-xl bg-slate-950/60 p-5">
-        <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-3xl/relaxed font-extrabold tracking-wide text-transparent">
+    <div id="contact" className="py-10 md:py-14">
+      <div className="m-4 flex flex-col gap-7 rounded-xl bg-slate-950/60 p-5 md:gap-10 lg:mx-10 xl:mx-16 xl:px-14 xl:py-8">
+        <h1 className="self-center bg-gradient-to-r from-zinc-600 via-zinc-400 via-90% to-zinc-300 bg-clip-text text-xl/relaxed font-extrabold tracking-wide text-transparent md:text-3xl/relaxed xl:text-4xl/relaxed">
           Contact Me
         </h1>
-        <form onSubmit={contact} className="flex grow flex-col gap-7 px-5">
-          <div className="flex w-full gap-5">
+        <form
+          onSubmit={contact}
+          className="flex grow flex-col gap-5 px-5 md:gap-7"
+        >
+          <div className="flex w-full flex-col gap-5 md:flex-row">
             <label className="flex w-full flex-col gap-2">
               <span className="text-slate-300">First Name</span>
               <input

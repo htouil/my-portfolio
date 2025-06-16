@@ -1,8 +1,8 @@
 const NavBar = () => {
   return (
-    <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <div className="grid grid-cols-3 place-items-center gap-3">
+    <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
+      <div className="mx-auto flex items-center justify-between">
+        <div className="grid grid-cols-3 place-items-center gap-1.5 md:gap-2 xl:gap-2.5">
           <a
             title="Visit my Linkedin"
             rel="noopener noreferrer"
@@ -10,9 +10,7 @@ const NavBar = () => {
             href="https://www.linkedin.com/in/hatim-touil-a57744208/"
           >
             <svg
-              className="cursor-pointer fill-slate-300 hover:fill-slate-600"
-              width="28px"
-              height="28px"
+              className="size-4 cursor-pointer fill-slate-300 hover:fill-slate-600 md:size-5 xl:size-6"
               viewBox="0 0 32 32"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -35,9 +33,7 @@ const NavBar = () => {
             href="https://github.com/htouil"
           >
             <svg
-              className="jam jam-github cursor-pointer fill-slate-300 hover:fill-slate-600"
-              width="28px"
-              height="28px"
+              className="jam jam-github size-4 cursor-pointer fill-slate-300 hover:fill-slate-600 md:size-5 xl:size-6"
               viewBox="0 0 21 21"
               xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="xMinYMin"
@@ -55,14 +51,14 @@ const NavBar = () => {
           </a>
           <a
             title="Download my CV"
-            className="size-full content-center rounded-lg border-2 border-slate-300 text-center text-xs font-bold text-slate-300 hover:border-slate-600 hover:text-slate-600"
-            href=""
+            className="size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
+            href="/CV_Hatim_Touil_EN.pdf"
             download
           >
             CV
           </a>
         </div>
-        <ul className="flex space-x-6 text-lg font-medium text-slate-300">
+        <ul className="flex space-x-6 text-xs font-medium text-slate-300 sm:text-sm md:text-base lg:text-lg xl:text-xl">
           <li>
             <a href="#about" className="hover:text-slate-600">
               About Me
