@@ -58,7 +58,7 @@ const NavBar = () => {
             CV
           </a>
         </div>
-        <ul className="flex space-x-6 text-[9px] min-[500px]:text-xs font-medium text-slate-300 sm:text-sm md:text-base lg:text-lg xl:text-xl">
+        <ul className="flex space-x-6 text-[10px] min-[500px]:text-xs font-medium text-slate-300 sm:text-sm md:text-base lg:text-lg xl:text-xl">
           <li>
             <a href="#about" className="hover:text-slate-600">
               About Me

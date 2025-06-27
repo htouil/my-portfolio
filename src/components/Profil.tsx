@@ -3,7 +3,7 @@
 const Profil = () => {
   return (
     <div id="about" className="py-10 md:py-14">
-      <div className="m-4 flex flex-col min-[500px]:flex-row rounded-xl bg-slate-950 p-3.5 sm:p-4 md:p-5 lg:mx-10 lg:px-14 xl:mx-16 xl:px-16 xl:py-8 2xl:px-32 2xl:py-10">
+      <div className="m-4 flex flex-col min-[500px]:flex-row rounded-xl bg-slate-950/60 p-3.5 sm:p-4 md:p-5 lg:mx-10 lg:px-14 xl:mx-16 xl:px-16 xl:py-8 2xl:px-32 2xl:py-10">
         <img
           src="/hatim_picture.jpg"
           alt="profil_picture"
