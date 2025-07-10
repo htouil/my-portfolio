@@ -16,10 +16,10 @@ const popCVButtons = (event: Event, cv_popup: HTMLDivElement) => {
       cv_popup.classList.add("hidden");
     });
   }
-  else
-  {
-    cv_popup.classList.add("hidden");
-  }
+  // else
+  // {
+  //   cv_popup.classList.add("hidden");
+  // }
 }
 
 const NavBar = () => {
