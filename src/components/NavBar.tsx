@@ -1,8 +1,39 @@
+const popCVButtons = (event: Event, cv_popup: HTMLDivElement) => {
+  event?.stopPropagation();
+
+  if (cv_popup.classList.contains("hidden"))
+  {
+    cv_popup.classList.remove("hidden");
+    document.addEventListener("click", (event) => {
+      event?.stopPropagation();
+
+      if (!cv_popup.contains(event.target as Node))
+        cv_popup.classList.add("hidden");
+    });
+    document.addEventListener("scroll", (event) => {
+      event?.stopPropagation();
+
+      cv_popup.classList.add("hidden");
+    });
+  }
+  else
+  {
+    cv_popup.classList.add("hidden");
+  }
+}
+
 const NavBar = () => {
+  const cv_btn = document.getElementById('download-cvs-btn') as HTMLButtonElement;
+  const cv_popup = document.getElementById('cv-popup') as HTMLDivElement;
+
+  if (cv_btn && cv_popup)
+  {
+    cv_btn?.addEventListener("click", (event) => popCVButtons(event, cv_popup));
+  }
   return (
     <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
       <div className="mx-auto flex items-center justify-between">
-        <div className="grid grid-cols-3 place-items-center gap-1.5 md:gap-2 xl:gap-2.5">
+        <div className="relative grid grid-cols-3 place-items-center gap-1.5 md:gap-2 xl:gap-2.5">
           <a
             title="Visit my Linkedin"
             rel="noopener noreferrer"
@@ -49,16 +80,36 @@ const NavBar = () => {
               </g>
             </svg>
           </a>
-          <a
+          <button
+            id="download-cvs-btn"
+            title="Download my CV"
+            className="cursor-pointer size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
+          >
+            CV
+          </button>
+          {/* <a
             title="Download my CV"
             className="size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
             href="/CV_Hatim_Touil_EN.pdf"
             download
           >
             CV
-          </a>
+          </a> */}
+          <div id="cv-popup" className="hidden absolute bottom-0 right-0 translate-y-full -translate-x-0.5 md:scale-110 md:-translate-x-1.5 md:translate-y-8.5 xl:scale-125 xl:-translate-x-3 xl:translate-y-9">
+            <img src="/triangle_icon.png" className="size-2.5 text-sky-900 place-self-end"/>
+            <div className="flex rounded ring-2 w-[72px] h-5.5 translate-x-2 items-center justify-center ring-sky-900 bg-slate-950 divide-x-2 divide-sky-900">
+              <a href="/CV_Hatim_Touil_EN.pdf" download className="grid grid-cols-2 place-items-center size-full px-0.5">
+                <img src="/download_icon.png" className="size-3"/>
+                <p className="text-[10px] text-slate-300">EN</p>
+              </a>
+              <a href="/CV_Hatim_Touil_FR.pdf" download className="grid grid-cols-2 place-items-center size-full px-0.5">
+                <img src="/download_icon.png" className="size-3"/>
+                <p className="text-[10px] text-slate-300">FR</p>
+              </a>
+            </div>
+          </div>
         </div>
-        <ul className="flex space-x-6 text-[10px] min-[500px]:text-xs font-medium text-slate-300 sm:text-sm md:text-base lg:text-lg xl:text-xl">
+        <ul className="flex space-x-6 text-[10px] font-medium text-slate-300 min-[500px]:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
           <li>
             <a href="#about" className="hover:text-slate-600">
               About Me
