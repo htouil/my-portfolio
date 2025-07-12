@@ -1,36 +1,29 @@
-const popCVButtons = (event: Event, cv_popup: HTMLDivElement) => {
-  event?.stopPropagation();
-
-  if (cv_popup.classList.contains("hidden"))
-  {
-    cv_popup.classList.remove("hidden");
-    document.addEventListener("click", (event) => {
-      event?.stopPropagation();
-
-      if (!cv_popup.contains(event.target as Node))
-        cv_popup.classList.add("hidden");
-    });
-    document.addEventListener("scroll", (event) => {
-      event?.stopPropagation();
-
-      cv_popup.classList.add("hidden");
-    });
-  }
-  // else
-  // {
-  //   cv_popup.classList.add("hidden");
-  // }
-}
+import { useState , useEffect , useRef} from "react";
 
 const NavBar = () => {
-  const cv_btn = document.getElementById('download-cvs-btn') as HTMLButtonElement;
-  const cv_popup = document.getElementById('cv-popup') as HTMLDivElement;
+  const [isVisible, setIsVisible] = useState(false);
 
-  if (cv_btn && cv_popup)
-  {
-    cv_btn?.addEventListener("click", (event) => popCVButtons(event, cv_popup));
-  }
-  return (
+  const cvPopup = useRef<HTMLDivElement | null>(null);
+  const cvBtn = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const turnHidden = (e: Event) => {
+      if (cvPopup.current && cvBtn.current && isVisible === true)
+      {
+        if (!cvPopup.current.contains(e.target as Node) && !cvBtn.current.contains(e.target as Node))
+          setIsVisible(false);
+      }
+    }
+    
+    document.addEventListener("mousedown", turnHidden);
+    document.addEventListener("scroll", turnHidden);
+
+    return () => {
+      document.removeEventListener("mousedown", turnHidden);
+      document.removeEventListener("scroll", turnHidden);
+    }
+  })
+    return (
     <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
       <div className="mx-auto flex items-center justify-between">
         <div className="relative grid grid-cols-3 place-items-center gap-1.5 md:gap-2 xl:gap-2.5">
@@ -81,9 +74,10 @@ const NavBar = () => {
             </svg>
           </a>
           <button
-            id="download-cvs-btn"
+            ref={cvBtn}
             title="Download my CV"
             className="cursor-pointer size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
+            onClick={() => setIsVisible(!isVisible)}
           >
             CV
           </button>
@@ -95,7 +89,7 @@ const NavBar = () => {
           >
             CV
           </a> */}
-          <div id="cv-popup" className="hidden absolute bottom-0 right-0 translate-y-full -translate-x-0.5 md:scale-110 md:-translate-x-1.5 md:translate-y-8.5 xl:scale-125 xl:-translate-x-3 xl:translate-y-9">
+          <div ref={cvPopup} className={`${isVisible ? "" : "hidden"} absolute bottom-0 right-0 translate-y-full -translate-x-0.5 md:scale-110 md:-translate-x-1.5 md:translate-y-8.5 xl:scale-125 xl:-translate-x-3 xl:translate-y-9`}>
             <img src="/triangle_icon.png" className="size-2.5 text-sky-900 place-self-end"/>
             <div className="flex rounded ring-2 w-[72px] h-5.5 translate-x-2 items-center justify-center ring-sky-900 bg-slate-950 divide-x-2 divide-sky-900">
               <a href="/CV_Hatim_Touil_EN.pdf" download className="grid grid-cols-2 place-items-center size-full px-0.5">
