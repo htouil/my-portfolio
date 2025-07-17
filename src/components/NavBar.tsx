@@ -1,6 +1,11 @@
-import { useState , useEffect , useRef} from "react";
+import { useState, useEffect, useRef } from 'react';
 
 const NavBar = () => {
+  // const aboutMe = useRef<HTMLAnchorElement | null>(null);
+  // const skills = useRef<HTMLAnchorElement | null>(null);
+  // const projects = useRef<HTMLAnchorElement | null>(null);
+  // const contactMe = useRef<HTMLAnchorElement | null>(null);
+
   const [isVisible, setIsVisible] = useState(false);
 
   const cvPopup = useRef<HTMLDivElement | null>(null);
@@ -8,23 +13,26 @@ const NavBar = () => {
 
   useEffect(() => {
     const turnHidden = (e: Event) => {
-      if (cvPopup.current && cvBtn.current && isVisible === true)
-      {
-        if (!cvPopup.current.contains(e.target as Node) && !cvBtn.current.contains(e.target as Node))
+      if (cvPopup.current && cvBtn.current && isVisible === true) {
+        if (
+          !cvPopup.current.contains(e.target as Node) &&
+          !cvBtn.current.contains(e.target as Node)
+        )
           setIsVisible(false);
       }
-    }
-    
-    document.addEventListener("mousedown", turnHidden);
-    document.addEventListener("scroll", turnHidden);
+    };
+
+    document.addEventListener('mousedown', turnHidden);
+    document.addEventListener('scroll', turnHidden);
 
     return () => {
-      document.removeEventListener("mousedown", turnHidden);
-      document.removeEventListener("scroll", turnHidden);
-    }
-  })
-    return (
-    <nav className="fixed top-0 right-0 left-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
+      document.removeEventListener('mousedown', turnHidden);
+      document.removeEventListener('scroll', turnHidden);
+    };
+  });
+
+  return (
+    <nav className="fixed inset-x-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
       <div className="mx-auto flex items-center justify-between">
         <div className="relative grid grid-cols-3 place-items-center gap-1.5 md:gap-2 xl:gap-2.5">
           <a
@@ -76,28 +84,34 @@ const NavBar = () => {
           <button
             ref={cvBtn}
             title="Download my CV"
-            className="cursor-pointer size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
+            className="size-4 cursor-pointer content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
             onClick={() => setIsVisible(!isVisible)}
           >
             CV
           </button>
-          {/* <a
-            title="Download my CV"
-            className="size-4 content-center rounded bg-slate-300 text-center text-[10px] font-extrabold text-slate-950 hover:bg-slate-600 md:size-5 md:text-sm xl:size-6 xl:text-base"
-            href="/CV_Hatim_Touil_EN.pdf"
-            download
+          <div
+            ref={cvPopup}
+            className={`${isVisible ? '' : 'hidden'} absolute right-0 bottom-0 -translate-x-0.5 translate-y-full md:-translate-x-1.5 md:translate-y-8.5 md:scale-110 xl:-translate-x-3 xl:translate-y-9 xl:scale-125`}
           >
-            CV
-          </a> */}
-          <div ref={cvPopup} className={`${isVisible ? "" : "hidden"} absolute bottom-0 right-0 translate-y-full -translate-x-0.5 md:scale-110 md:-translate-x-1.5 md:translate-y-8.5 xl:scale-125 xl:-translate-x-3 xl:translate-y-9`}>
-            <img src="/triangle_icon.png" className="size-2.5 text-sky-900 place-self-end"/>
-            <div className="flex rounded ring-2 w-[72px] h-5.5 translate-x-2 items-center justify-center ring-sky-900 bg-slate-950 divide-x-2 divide-sky-900">
-              <a href="/CV_Hatim_Touil_EN.pdf" download className="grid grid-cols-2 place-items-center size-full px-0.5">
-                <img src="/download_icon.png" className="size-3"/>
+            <img
+              src="/triangle_icon.png"
+              className="size-2.5 place-self-end text-sky-900"
+            />
+            <div className="flex h-5.5 w-[72px] translate-x-2 items-center justify-center divide-x-2 divide-sky-900 rounded bg-slate-950 ring-2 ring-sky-900">
+              <a
+                href="/CV_Hatim_Touil_EN.pdf"
+                download
+                className="grid size-full grid-cols-2 place-items-center px-0.5"
+              >
+                <img src="/download_icon.png" className="size-3" />
                 <p className="text-[10px] text-slate-300">EN</p>
               </a>
-              <a href="/CV_Hatim_Touil_FR.pdf" download className="grid grid-cols-2 place-items-center size-full px-0.5">
-                <img src="/download_icon.png" className="size-3"/>
+              <a
+                href="/CV_Hatim_Touil_FR.pdf"
+                download
+                className="grid size-full grid-cols-2 place-items-center px-0.5"
+              >
+                <img src="/download_icon.png" className="size-3" />
                 <p className="text-[10px] text-slate-300">FR</p>
               </a>
             </div>

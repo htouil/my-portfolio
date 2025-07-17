@@ -4,22 +4,27 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ContactMe from './components/ContactMe';
 import CoolSeparator from './components/CoolSeparator';
-import './App.css';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
     <>
-      {/* add links as logos in the navbar*/}
-      <NavBar />
-      <Profil />
-      <CoolSeparator />
-      <Skills />
-      <CoolSeparator />
-      <Projects />
-      <CoolSeparator />
-      <ContactMe />
-      <Footer />
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <Profil />
+        <CoolSeparator />
+        <Skills />
+        <CoolSeparator />
+        <Projects />
+        <CoolSeparator />
+        <ContactMe />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
