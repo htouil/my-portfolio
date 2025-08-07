@@ -35,7 +35,7 @@ const SingleProject = ({ title, image, text }: SingleProjectProps) => {
       </h2>
       <div
         ref={divToClick}
-        className="group relative h-32 overflow-hidden rounded-b-lg border border-t-gray-400 bg-[#dabb64] sm:h-40 md:h-44 xl:h-60"
+        className="group relative max-[500px]:h-40 h-32 overflow-hidden rounded-b-lg border border-t-gray-400 bg-[#dabb64] sm:h-40 md:h-44 xl:h-60"
       >
         <img
           ref={imageToHover}
