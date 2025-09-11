@@ -6,24 +6,24 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { src: '/git_logo.png', name: 'Git' },
-  { src: '/bash_logo.png', name: 'Bash' },
-  { src: '/c_logo.png', name: 'C' },
-  { src: '/c++_logo.png', name: 'C++' },
-  { src: '/docker_logo.png', name: 'Docker' },
   { src: '/html_logo.png', name: 'HTML' },
   { src: '/css_logo.png', name: 'CSS' },
   { src: '/tailwind_logo.png', name: 'Tailwind CSS' },
   { src: '/typescript_logo.png', name: 'TypeScript' },
   { src: '/react_logo.png', name: 'ReactJS' },
+  { src: '/nodejs_logo.png', name: 'NodeJS' },
+  { src: '/fastify_logo.svg', name: 'Fastify' },
+  { src: '/expressjs_logo.svg', name: 'ExpressJS' },
+  { src: '/sqlite_logo.svg', name: 'SQLite' },
+  { src: '/git_logo.png', name: 'Git' },
+  { src: '/docker_logo.png', name: 'Docker' },
+  { src: '/bash_logo.png', name: 'Bash' },
+  { src: '/c_logo.png', name: 'C' },
+  { src: '/c++_logo.png', name: 'C++' },
 ];
 
 const addPadding = (src: string): string => {
   switch (src) {
-    case '/bash_logo.png':
-      return 'p-1';
-    case '/docker_logo.png':
-      return 'p-0.5 md:p-1';
     case '/css_logo.png':
       return 'p-2.5 md:p-3';
     case '/tailwind_logo.png':
@@ -32,6 +32,18 @@ const addPadding = (src: string): string => {
       return 'p-1.5 md:p-2';
     case '/react_logo.png':
       return 'p-1.5';
+    case '/nodejs_logo.png':
+      return 'p-2 md:p-1.5';
+    case '/fastify_logo.svg':
+      return 'p-1 md:p-0';
+    case '/expressjs_logo.svg':
+      return 'p-2 md:p-1';
+    case '/sqlite_logo.svg':
+      return 'p-1 md:p-0.5';
+    case '/docker_logo.png':
+      return 'p-1 md:p-0';
+    case '/bash_logo.png':
+      return 'p-1';
     default:
       return 'p-0';
   }
@@ -50,7 +62,7 @@ const Marquee = () => {
     ...skills,
   ];
   return (
-    <div className="max-[500px]:scale-90 overflow-hidden rounded-3xl border-t border-b border-sky-600 py-7 shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1),_0_-10px_15px_-3px_rgb(0_0_0_/0.1)] shadow-sky-500/50 md:rounded-4xl md:py-10">
+    <div className="overflow-hidden rounded-3xl border-t border-b border-sky-600 py-7 shadow-[0_10px_15px_-3px_rgb(0_0_0_/0.1),_0_-10px_15px_-3px_rgb(0_0_0_/0.1)] shadow-sky-500/50 max-[500px]:scale-90 md:rounded-4xl md:py-10">
       <div className="marquee flex gap-7 md:gap-10">
         {duplicatedSkills.map((skill, index) => (
           <div
