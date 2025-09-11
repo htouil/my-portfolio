@@ -58,8 +58,7 @@ const Projects = () => {
             text='"ft_transcendence", the final group project of the 1337 common core
             curriculum, is a full-stack web application that combines a
             real-time multiplayer Pong game with features like user
-            authentication, chat systems, and user profiles.
-            <br />
+            authentication, chat systems, and user profiles. 
             In this project, I specialized in the front-end development,
             utilizing HTML, Tailwind CSS, and TypeScript to craft a responsive
             and visually appealing user interface.'
