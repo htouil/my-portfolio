@@ -99,7 +99,7 @@ const NavBar = () => {
             />
             <div className="flex h-5.5 w-[72px] translate-x-2 items-center justify-center divide-x-2 divide-sky-900 rounded bg-slate-950 ring-2 ring-sky-900">
               <a
-                href="/CV_Hatim_Touil_EN.pdf"
+                href="/new_CV_Hatim_Touil_EN.pdf"
                 download
                 className="grid size-full grid-cols-2 place-items-center px-0.5"
               >
@@ -107,7 +107,7 @@ const NavBar = () => {
                 <p className="text-[10px] text-slate-300">EN</p>
               </a>
               <a
-                href="/CV_Hatim_Touil_FR.pdf"
+                href="/new_CV_Hatim_Touil_FR.pdf"
                 download
                 className="grid size-full grid-cols-2 place-items-center px-0.5"
               >
