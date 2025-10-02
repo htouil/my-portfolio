@@ -14,7 +14,7 @@ const skills: Skill[] = [
   { src: '/nodejs_logo.png', name: 'NodeJS' },
   { src: '/fastify_logo.svg', name: 'Fastify' },
   { src: '/expressjs_logo.svg', name: 'ExpressJS' },
-  { src: '/sqlite_logo.svg', name: 'SQLite' },
+  { src: '/mysql_logo.png', name: 'MySQL' },
   { src: '/git_logo.png', name: 'Git' },
   { src: '/docker_logo.png', name: 'Docker' },
   { src: '/bash_logo.png', name: 'Bash' },
@@ -38,8 +38,8 @@ const addPadding = (src: string): string => {
       return 'p-1 md:p-0';
     case '/expressjs_logo.svg':
       return 'p-2 md:p-1';
-    case '/sqlite_logo.svg':
-      return 'p-1 md:p-0.5';
+    case '/mysql_logo.png':
+      return 'p-2.5 md:p-1.5';
     case '/docker_logo.png':
       return 'p-1 md:p-0';
     case '/bash_logo.png':
