@@ -41,11 +41,12 @@ const Profil = () => {
               </div>
             </div>
             <div className="basis-9/12 bg-[#dabb64] md:basis-5/6">
-              <p className="p-2 indent-8 text-xs text-pretty text-black md:p-3 md:text-sm 2xl:text-base">
-                Hello and Welcome, My name is Hatim TOUIL, a front-end developer
-                with a strong foundation in system programming, algorithms, and
-                collaborative coding, honed through the rigorous Common Core at
-                1337 Coding School.
+              <p className="p-2 indent-8 text-xs text-pretty text-black md:p-3 md:text-sm 2xl:text-[15px]">
+                Hello and Welcome, My name is Hatim TOUIL, a Full-Stack web 
+                developer with strong Front-End expretise in HTML, TypeScript,
+                Tailwind CSS and ReactJs, honed through the rigorous Common Core at
+                1337 Coding School, currently expanding Back-End skills with NodeJs, 
+                Fastify and MySQL.
                 <br />
                 I'm passionate about crafting, not only responsive and
                 user-friendly, but also creative interfaces. My goal is to
