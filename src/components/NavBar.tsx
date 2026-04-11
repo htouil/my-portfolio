@@ -1,13 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const NavBar = () => {
-  // const aboutMe = useRef<HTMLAnchorElement | null>(null);
-  // const skills = useRef<HTMLAnchorElement | null>(null);
-  // const projects = useRef<HTMLAnchorElement | null>(null);
-  // const contactMe = useRef<HTMLAnchorElement | null>(null);
-
   const [isVisible, setIsVisible] = useState(false);
-
   const cvPopup = useRef<HTMLDivElement | null>(null);
   const cvBtn = useRef<HTMLButtonElement | null>(null);
 
@@ -30,6 +24,17 @@ const NavBar = () => {
       document.removeEventListener('scroll', turnHidden);
     };
   });
+
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string,
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="fixed inset-x-0 z-10 bg-slate-950 px-4 py-3 shadow-md xl:px-8 2xl:px-14">
@@ -99,7 +104,7 @@ const NavBar = () => {
             />
             <div className="flex h-5.5 w-[72px] translate-x-2 items-center justify-center divide-x-2 divide-sky-900 rounded bg-slate-950 ring-2 ring-sky-900">
               <a
-                href="/new_CV_Hatim_Touil_EN.pdf"
+                href="/CV_Hatim_Touil_EN.pdf"
                 download
                 className="grid size-full grid-cols-2 place-items-center px-0.5"
               >
@@ -107,7 +112,7 @@ const NavBar = () => {
                 <p className="text-[10px] text-slate-300">EN</p>
               </a>
               <a
-                href="/new_CV_Hatim_Touil_FR.pdf"
+                href="/CV_Hatim_Touil_FR.pdf"
                 download
                 className="grid size-full grid-cols-2 place-items-center px-0.5"
               >
@@ -119,22 +124,38 @@ const NavBar = () => {
         </div>
         <ul className="flex space-x-6 text-[10px] font-medium text-slate-300 min-[500px]:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
           <li>
-            <a href="#about" className="hover:text-slate-600">
+            <a
+              href="#about"
+              onClick={(e) => handleScroll(e, '#about')}
+              className="hover:text-slate-600"
+            >
               About Me
             </a>
           </li>
           <li>
-            <a href="#skills" className="hover:text-slate-600">
+            <a
+              href="#skills"
+              onClick={(e) => handleScroll(e, '#skills')}
+              className="hover:text-slate-600"
+            >
               Skills
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-slate-600">
+            <a
+              href="#projects"
+              onClick={(e) => handleScroll(e, '#projects')}
+              className="hover:text-slate-600"
+            >
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-slate-600">
+            <a
+              href="#contact"
+              onClick={(e) => handleScroll(e, '#contact')}
+              className="hover:text-slate-600"
+            >
               Contact Me
             </a>
           </li>
@@ -143,78 +164,5 @@ const NavBar = () => {
     </nav>
   );
 };
-
-// import { useState } from 'react';
-// import { Menu, X } from 'lucide-react';
-
-// const NavBar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleMenu = () => setIsOpen(!isOpen);
-
-//   return (
-//     <nav className="bg-slate-950 px-4 py-3 shadow-md">
-//       <div className="mx-auto flex max-w-7xl items-center justify-between">
-//         <div className="text-xl font-bold text-gray-800 dark:text-white">
-//           MyPortfolio
-//         </div>
-//         <div className="md:hidden">
-//           <button
-//             onClick={toggleMenu}
-//             className="text-gray-800 dark:text-white"
-//           >
-//             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-//           </button>
-//         </div>
-//         <ul className="hidden space-x-6 font-medium text-gray-800 md:flex dark:text-white">
-//           <li>
-//             <a href="#about" className="hover:text-blue-500">
-//               About Me
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#skills" className="hover:text-blue-500">
-//               Skills
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#projects" className="hover:text-blue-500">
-//               Projects
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#contact" className="hover:text-blue-500">
-//               Contact Me
-//             </a>
-//           </li>
-//         </ul>
-//       </div>
-//       {isOpen && (
-//         <ul className="mt-2 space-y-2 font-medium text-gray-800 md:hidden dark:text-white">
-//           <li>
-//             <a href="#about" onClick={toggleMenu}>
-//               About
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#skills" className="hover:text-blue-500">
-//               Skills
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#projects" onClick={toggleMenu}>
-//               Projects
-//             </a>
-//           </li>
-//           <li>
-//             <a href="#contact" onClick={toggleMenu}>
-//               Contact Me
-//             </a>
-//           </li>
-//         </ul>
-//       )}
-//     </nav>
-//   );
-// };
 
 export default NavBar;

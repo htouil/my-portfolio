@@ -1,5 +1,5 @@
 /** @type {import("prettier").Config} */
-module.exports = {
+const config = {
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
@@ -10,3 +10,5 @@ module.exports = {
   arrowParens: 'always',
   plugins: ['prettier-plugin-tailwindcss'],
 };
+
+export default config;
